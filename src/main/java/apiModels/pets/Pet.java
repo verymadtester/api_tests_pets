@@ -25,7 +25,7 @@ public class Pet {
     @SerializedName("photoUrls")
     private List<String> photoUrls;
     @SerializedName("tags")
-    private PetTags tags;
+    private Object tags;
     @SerializedName("status")
     private String status;
 }
