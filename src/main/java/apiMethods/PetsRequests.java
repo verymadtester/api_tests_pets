@@ -49,6 +49,12 @@ public class PetsRequests {
         return pets;
     }
 
+    /**
+     *
+     * @param status - status of pet. Can be available, pending or sold.
+     * @param name - name of requesting pet
+     * @return id of searching pet
+     */
     public static int getPetId(String status, String name){
         Pet pet = new Pet();
         int petId = 0;
