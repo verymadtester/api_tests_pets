@@ -24,7 +24,7 @@ public class TestFrame {
                 .addSystemInfo("Environment", "Automation Testing")
                 .addSystemInfo("User Name", "Sergey Shatilov");
 
-        extent.loadConfig(new File(System.getProperty("user.dir")+"/extent-config.xml"));
+        extent.loadConfig(new File(System.getProperty("user.dir")+"/src/main/resources/extent-config.xml"));
     }
 
     @AfterMethod
