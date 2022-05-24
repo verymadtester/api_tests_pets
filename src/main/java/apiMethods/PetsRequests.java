@@ -49,4 +49,16 @@ public class PetsRequests {
         return pets;
     }
 
+    public static int getPetId(String status, String name){
+        Pet pet = new Pet();
+        int petId = 0;
+        JsonArray response = getAllPets(status);
+        for (JsonElement jsonElement : response) {
+            pet = gson.fromJson(jsonElement, Pet.class);
+            if (pet.getName().equals(name)){
+               petId = pet.getId();
+            }
+        }
+        return petId;
+    }
 }
