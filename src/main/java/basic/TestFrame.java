@@ -14,6 +14,7 @@ public class TestFrame {
 
     public ExtentReports extent;
     public ExtentTest logger;
+
     @BeforeTest
     public void startReport(){
         extent = new ExtentReports(System.getProperty("user.dir") +"/test-output/ExtentReport.html", true);

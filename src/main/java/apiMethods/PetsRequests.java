@@ -17,6 +17,11 @@ public class PetsRequests {
 
     private static final Gson gson = new GsonBuilder().serializeNulls().create();
 
+    /**
+     *
+     * @param status - status of pet. Can be available, pending or sold.
+     * @return JsonArray of pets with current status
+     */
     public static JsonArray getAllPets(String status){
         Logger.info("Get all Pets with status: " + status);
         String stringResponse = sendRequest(BASE_URL+ PET + FIND_BY_STATUS
@@ -24,6 +29,12 @@ public class PetsRequests {
         return JsonParser.parseString(stringResponse).getAsJsonArray();
     }
 
+    /**
+     *
+     * @param status - status of pet. Can be available, pending or sold.
+     * @param name - name of requesting pet
+     * @return list of found pets
+     */
     public static List<String> getPetByName(String status, String name){
         Logger.info("Get all Pets with status: " + status + " and name: " + name);
         Pet pet = new Pet();

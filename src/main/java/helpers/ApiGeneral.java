@@ -17,6 +17,14 @@ import static com.google.api.client.http.HttpMethods.PATCH;
 
 public class ApiGeneral {
 
+    /**
+     * Method for sending requests via HttpURLConnection with checking response code and duration time
+     *
+     * @param request - URL of request
+     * @param requestMethod - request method (GET, POST, etc)
+     * @param body - request body (can be null for some request methods)
+     * @return response of request as a String
+     */
     public static String sendRequest(String request, String requestMethod, String body) {
         Logger.info("Request method: " + requestMethod + ", Request URL: " + request);
 
@@ -70,6 +78,11 @@ public class ApiGeneral {
         return "";
     }
 
+    /**
+     * Method allows adding additional request methods to HttpURLConnection
+     *
+     * @param methods unusual type of request method
+     */
     private static void allowMethods(String... methods) {
         try {
             Field methodsField = HttpURLConnection.class.getDeclaredField("methods");
