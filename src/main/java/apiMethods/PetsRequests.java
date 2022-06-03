@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static basic.Service.BASE_URL;
-import static com.google.api.client.http.HttpMethods.GET;
+import static com.google.api.client.http.HttpMethods.*;
 import static helpers.ApiGeneral.sendRequest;
 import static helpers.Endpoints.Commons.PET;
 import static helpers.Endpoints.Pets.FIND_BY_STATUS;
@@ -66,5 +66,22 @@ public class PetsRequests {
             }
         }
         return petId;
+    }
+
+    public static void postPet(Pet pet){
+        Logger.info("Create new Pet with data: \n" + pet);
+        Gson gson = new GsonBuilder().create();
+        sendRequest(BASE_URL+ PET, POST, gson.toJson(pet));
+    }
+
+    public static void updatePet(Pet pet){
+        Logger.info("Update Pet with data: \n" + pet);
+        Gson gson = new GsonBuilder().create();
+        sendRequest(BASE_URL+ PET, PUT, gson.toJson(pet));
+    }
+
+    public static void deletePet(String id){
+        Logger.info("Delete Pet with id: " + id);
+        String stringResponse = sendRequest(BASE_URL+ PET + "/" + id, DELETE, null);
     }
 }

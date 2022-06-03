@@ -28,4 +28,12 @@ public class Pet {
     private Object tags;
     @SerializedName("status")
     private String status;
+
+    public <T> Pet(String name, String categoryName, String status){
+        this.id = 10;
+        this.name = name;
+        this.categoryId = 1;
+        this.categoryName = categoryName;
+        this.status = status;
+    }
 }
