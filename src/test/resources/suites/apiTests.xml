@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All tests" verbose="3">
+<suite name="API tests" verbose="3">
 
     <test name="apiTests" parallel="methods" thread-count="10">
         <packages>
             <package name="tests.pet"/>
-            <package name="tests.site"/>
         </packages>
     </test>
 
